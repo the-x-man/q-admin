@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh lpR fFf">
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -11,10 +11,10 @@
           aria-label="Menu"
         />
         <q-toolbar-title>
-          Quasar App
+          Worship
         </q-toolbar-title>
         <q-space/>
-        <div class="q-gutter-sm row items-center no-wrap">
+        <!-- <div class="q-gutter-sm row items-center no-wrap">
                     <q-btn round dense flat color="white" :icon="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"
                            @click="$q.fullscreen.toggle()"
                            v-if="$q.screen.gt.sm">
@@ -46,7 +46,7 @@
               <img src="https://cdn.quasar.dev/img/boy-avatar.png">
             </q-avatar>
           </q-btn>
-        </div>
+        </div> -->
       </q-toolbar>
     </q-header>
 
@@ -56,162 +56,82 @@
       bordered
       class="bg-primary text-white"
     >
-      <q-list>
+      <q-list dense style="margin-top:10px">
         <q-item to="/" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
-            <q-icon name="dashboard"/>
+            <q-icon name="ion-home"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Dashboard</q-item-label>
+            <q-item-label>{{$t('menu.home')}}</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item to="/" active-class="q-item-no-link-highlighting">
+          <q-item-section avatar>
+            <q-icon name="eva-list-outline"/>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{$t('menu.list')}}</q-item-label>
           </q-item-section>
         </q-item>
         <q-item to="/Dashboard2" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
-            <q-icon name="dashboard"/>
+            <q-icon name="ion-musical-note"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>CRM Dashboard</q-item-label>
+            <q-item-label>{{$t('menu.song')}}</q-item-label>
           </q-item-section>
         </q-item>
-        <q-expansion-item
-          icon="pages"
-          label="Pages"
-        >
-          <q-list class="q-pl-lg">
-            <q-item to="/Login-1" active-class="q-item-no-link-highlighting">
-              <q-item-section avatar>
-                <q-icon name="email"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>Login-1</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item to="/Lock" active-class="q-item-no-link-highlighting">
-              <q-item-section avatar>
-                <q-icon name="lock"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>Lock Screen</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item to="/Lock-2" active-class="q-item-no-link-highlighting">
-              <q-item-section avatar>
-                <q-icon name="lock"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>Lock Screen - 2</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item to="/Pricing" active-class="q-item-no-link-highlighting">
-              <q-item-section avatar>
-                <q-icon name="list"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>Pricing</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item-label header class="text-weight-bolder text-white">Generic</q-item-label>
-            <q-item to="/Profile" active-class="q-item-no-link-highlighting">
-              <q-item-section avatar>
-                <q-icon name="person"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>User Profile</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item to="/Maintenance" active-class="q-item-no-link-highlighting">
-              <q-item-section avatar>
-                <q-icon name="settings"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>Maintenance</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-expansion-item>
-        <q-expansion-item
-          icon="map"
-          label="Maps"
-        >
-          <q-list class="q-pl-lg">
-            <q-item to="/Map" active-class="q-item-no-link-highlighting">
-              <q-item-section avatar>
-                <q-icon name="map"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>Map</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item to="/MapMarker" active-class="q-item-no-link-highlighting">
-              <q-item-section avatar>
-                <q-icon name="location_on"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>Map Marker</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item to="/StreetView" active-class="q-item-no-link-highlighting">
-              <q-item-section avatar>
-                <q-icon name="streetview"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>Street View</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-expansion-item>
-
         <q-item to="/Mail" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
-            <q-icon name="email"/>
+            <q-icon name="eva-book-outline"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Mail</q-item-label>
+            <q-item-label>{{$t('menu.bible')}}</q-item-label>
           </q-item-section>
         </q-item>
 
         <q-item to="/directory" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
-            <q-icon name="card_giftcard"/>
+            <q-icon name="eva-image-outline"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Directory</q-item-label>
+            <q-item-label>{{$t('menu.image')}}</q-item-label>
           </q-item-section>
         </q-item>
 
         <q-item to="/TreeTable" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
-            <q-icon name="list"/>
+            <q-icon name="eva-film-outline"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>TreeTable</q-item-label>
+            <q-item-label>{{$t('menu.video')}}</q-item-label>
           </q-item-section>
         </q-item>
         <q-item to="/Charts" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
-            <q-icon name="insert_chart"/>
+            <q-icon name="eva-text-outline"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Charts</q-item-label>
+            <q-item-label>{{$t('menu.ticker')}}</q-item-label>
           </q-item-section>
         </q-item>
         <q-item to="/Footer" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
-            <q-icon name="info"/>
+            <q-icon name="eva-clock-outline"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Footer</q-item-label>
+            <q-item-label>{{$t('menu.clock')}}</q-item-label>
           </q-item-section>
         </q-item>
         <q-item to="/CardHeader" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
-            <q-icon name="card_giftcard"/>
+            <q-icon name="eva-settings-outline"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Card Header</q-item-label>
+            <q-item-label>{{$t('menu.settings')}}</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item to="/Cards" active-class="q-item-no-link-highlighting">
+        <!-- <q-item to="/Cards" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
             <q-icon name="card_giftcard"/>
           </q-item-section>
@@ -242,17 +162,17 @@
           <q-item-section>
             <q-item-label>Checkout</q-item-label>
           </q-item-section>
-        </q-item>
+        </q-item> -->
 
         <!--        not completed-->
-        <q-item to="/Calendar" active-class="q-item-no-link-highlighting">
+        <!-- <q-item to="/Calendar" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
             <q-icon name="date_range"/>
           </q-item-section>
           <q-item-section>
             <q-item-label>Calendar</q-item-label>
           </q-item-section>
-        </q-item>
+        </q-item> -->
 
         <!--        not completed-->
         <!--        <q-item to="/Taskboard" active-class="q-item-no-link-highlighting">-->
@@ -264,7 +184,7 @@
         <!--          </q-item-section>-->
         <!--        </q-item>-->
 
-        <q-item to="/Pagination" active-class="q-item-no-link-highlighting">
+        <!-- <q-item to="/Pagination" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
             <q-icon name="date_range"/>
           </q-item-section>
@@ -314,7 +234,7 @@
               </q-item>
             </q-expansion-item>
           </q-expansion-item>
-        </q-expansion-item>
+        </q-expansion-item> -->
       </q-list>
     </q-drawer>
 
@@ -336,7 +256,7 @@ export default defineComponent({
 
   components: {
     EssentialLink,
-    Messages
+    Messages,
   },
 
   setup() {
